@@ -4,11 +4,11 @@ from utils import prompter, get_response, determine_binary_answers
 from tqdm import tqdm
 from pprint import pprint
 from collections import defaultdict
-os.environ["OPENAI_API_KEY"] = "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"
-os.environ["COHERE_API_KEY"] = "j47X9Yy01ChYJiHaFcpUwmKE0MEYVeXgCu2bTu7m"
-os.environ["HUGGINGFACE_API_KEY"] = "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" 
-os.environ['AI21_API_KEY'] = "34y3ctmr1zyg2ofCZe85sI74r6Z0Tlf9"
-os.environ["REPLICATE_API_KEY"] = "r8_cocqTHulK4QBNcg8S6vc3NBvNuoCEab3VFPId"
+os.environ["OPENAI_API_KEY"] = ""
+os.environ["COHERE_API_KEY"] = ""
+os.environ["HUGGINGFACE_API_KEY"] = "" 
+os.environ['AI21_API_KEY'] = ""
+os.environ["REPLICATE_API_KEY"] = ""
 
 """Stage 1
 Set Hyperparameters and Load Data
@@ -18,7 +18,7 @@ k_false = 10 # how many false examples to show?
 rule_articulator = "gpt-4-0613"
 rule_verifiers = ["gpt-3.5-turbo-0613"]
 model_temperature = 0.0001
-gestalt_prompting = False
+gestalt_prompting = True
 
 # Load the dataset
 file_path = 'dataset.csv'
