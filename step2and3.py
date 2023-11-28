@@ -1,10 +1,10 @@
 import os
 import pandas as pd
-from utils import prompter, get_response, determine_binary_answers, gestalt_prompter
+from utils import prompter, get_response, determine_binary_answers
 from tqdm import tqdm
 from pprint import pprint
 from collections import defaultdict
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "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"
 os.environ["COHERE_API_KEY"] = "j47X9Yy01ChYJiHaFcpUwmKE0MEYVeXgCu2bTu7m"
 os.environ["HUGGINGFACE_API_KEY"] = "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" 
 os.environ['AI21_API_KEY'] = "34y3ctmr1zyg2ofCZe85sI74r6Z0Tlf9"

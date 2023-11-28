@@ -35,32 +35,6 @@ def prompter(test_instance, step = 1, gestalt=False):
 
     return '\n'.join(output)
 
-def gestalt_prompter(test_instance):
-    """
-    Generate formatted strings based on the provided dictionary containing true and false examples,
-    with true and false examples alternating. Also includes a test case and its label.
-
-    Parameters:
-    test_instance (dict): Dictionary containing keys 'true_examples', 'false_examples', 'test', and 'label'.
-
-    Returns:
-    str: Formatted string for each example and test case.
-    """
-    output = []
-    
-    # Iterate over the maximum length of true or false examples
-    for i in range(max(len(test_instance['true_examples']), len(test_instance['false_examples']))):
-        if i < len(test_instance['true_examples']):
-            output.append(f'Input: "{test_instance["true_examples"][i]}" Label: True')
-        if i < len(test_instance['false_examples']):
-            output.append(f'Input: "{test_instance["false_examples"][i]}" Label: False')
-    
-    # Add the test case with its label
-    test_label = 'True' if test_instance['label'] else 'False'
-    output.append(f'\n\nFollow these steps:\n1. Group True and False examples.\n2. Find common characteristics in True examples.\n3. Find common characteristics in False examples.\n4. Find the diverging pattern between the two groups.\n5. Write a set of steps to follow to label True or False\n6. Using the rules, run all given examples and record accuracy\n7. If the accuracy is below 90%, start again from step 2\n...(Retry...)...\nNow, answer this -> Input: "{test_instance["test"]}" Label: \nTrue \nFalse')
-
-    return '\n'.join(output)
-
 def get_response(model: str, 
                  messages: List[dict],
                  max_tokens: Optional[int] = None, 
